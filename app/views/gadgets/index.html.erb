@@ -1,0 +1,17 @@
+<h1>All My Gadgets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Brand</th>
+    <th>Buy Date</th>
+  </tr>
+
+<% @gadgets.each do |gadget| %>
+  <tr>
+    <td><%= gadget.name %></td>
+    <td><%= gadget.brand %></td>
+    <td><%= gadget.buy_date %></td>
+  </tr>
+<% end %>
+</table>
