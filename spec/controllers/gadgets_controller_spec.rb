@@ -39,6 +39,14 @@ describe GadgetsController do
       expect(response).to be_ok
     end
 
+    it 'creates a Gadget' do
+      Gadget.should_receive(:create).with(name: 'my gadget', brand: 'some brand')
+
+      put :create, name: 'my gadget', brand: 'some brand'
+
+      expect(response).to be_ok
+    end
+
     context 'search' do
       before do
         # TODO use a proper tool, such as database_cleaner
