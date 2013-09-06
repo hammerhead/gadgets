@@ -4,9 +4,14 @@ class GadgetsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  def create
-    Gadget.create(params)
+  def new
+    @gadget = Gadget.new
+  end
 
+  def create
+    Gadget.create(name: params[:gadget][:name], brand: params[:gadget][:brand], buy_date: params[:gadget][:buy_date])
+
+    @gadgets = Gadget.all
     render :index
   end
 
