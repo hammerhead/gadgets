@@ -5,7 +5,7 @@ Gadgets::Application.routes.draw do
     root :to => 'gadgets#index'
   end
 
-  get '/gadgets/:id', to: 'gadgets#show', as: 'gadget'
+  get '/gadgets/:gadget_id', to: 'gadgets#show', as: 'gadget'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
