@@ -46,7 +46,7 @@ describe GadgetsController do
     end
 
     it 'created a gadget' do
-      gadget_hash = { name: 'my new gadget', brand: 'new brand', buy_date: '2013-03-01' }
+      gadget_hash = { name: 'my new gadget', brand: 'new brand', buy_date: '2013-03-01', photo: nil }
       Gadget.should_receive(:create).with(gadget_hash)
 
       post :create, gadget: gadget_hash
