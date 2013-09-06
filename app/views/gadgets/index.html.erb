@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Brand</th>
     <th>Buy Date</th>
+    <th>Details</th>
   </tr>
 
 <% @gadgets.each do |gadget| %>
@@ -12,6 +13,7 @@
     <td><%= gadget.name %></td>
     <td><%= gadget.brand %></td>
     <td><%= gadget.buy_date %></td>
+    <td><%= link_to "Show", gadget %></td>
   </tr>
 <% end %>
 </table>
