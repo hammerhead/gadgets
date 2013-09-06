@@ -1,4 +1,6 @@
 Gadgets::Application.routes.draw do
+  root :to => 'gadgets#index'
+
   resource :gadgets, only: [:index, :show] do
     root :to => 'gadgets#index'
   end
