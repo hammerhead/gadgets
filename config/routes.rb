@@ -1,5 +1,7 @@
 Gadgets::Application.routes.draw do
-  resource :gadgets, only: [:show]
+  resource :gadgets, only: [:index, :show] do
+    root :to => 'gadgets#index'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
