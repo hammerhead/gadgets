@@ -23,6 +23,12 @@ describe GadgetsController do
 
     let(:gadget) { double('gadget', id: 1) }
 
+    it 'allows creating a gadget' do
+      get :new
+
+      expect(response).to be_ok
+    end
+
     it 'returns all Gadgets' do
       Gadget.should_receive(:all)
 
@@ -39,10 +45,11 @@ describe GadgetsController do
       expect(response).to be_ok
     end
 
-    it 'creates a Gadget' do
-      Gadget.should_receive(:create).with(hash_including({ name: 'my gadget', brand: 'some brand' }))
+    it 'created a gadget' do
+      gadget_hash = { name: 'my new gadget', brand: 'new brand', buy_date: '2013-03-01' }
+      Gadget.should_receive(:create).with(gadget_hash)
 
-      put :create, name: 'my gadget', brand: 'some brand'
+      post :create, gadget: gadget_hash
 
       expect(response).to be_ok
     end
