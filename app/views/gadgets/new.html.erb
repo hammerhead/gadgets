@@ -1,0 +1,7 @@
+<%= form_for @gadget, url: {action: "create"} do |f| %>
+  Name: <%= f.text_field :name %>
+  Brand: <%= f.text_field :brand %>
+  Buy Date: <%= f.text_field :buy_date %>
+
+  <%= f.submit "Create" %>
+<% end %>
