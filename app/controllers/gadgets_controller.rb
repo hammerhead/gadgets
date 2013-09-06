@@ -4,6 +4,12 @@ class GadgetsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  def create
+    Gadget.create(params)
+
+    render :index
+  end
+
   def index
     if params[:search].blank?
       @gadgets = Gadget.all

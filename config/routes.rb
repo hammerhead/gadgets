@@ -3,7 +3,7 @@ Gadgets::Application.routes.draw do
 
   root :to => 'gadgets#index'
 
-  resource :gadgets, only: [:index, :show] do
+  resource :gadgets, only: [:index, :show, :create] do
     root :to => 'gadgets#index'
   end
 

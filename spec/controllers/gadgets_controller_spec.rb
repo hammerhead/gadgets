@@ -40,7 +40,7 @@ describe GadgetsController do
     end
 
     it 'creates a Gadget' do
-      Gadget.should_receive(:create).with(name: 'my gadget', brand: 'some brand')
+      Gadget.should_receive(:create).with(hash_including({ name: 'my gadget', brand: 'some brand' }))
 
       put :create, name: 'my gadget', brand: 'some brand'
 
