@@ -4,6 +4,7 @@ describe Gadget do
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:brand) }
   it { should allow_mass_assignment_of(:buy_date) }
+  it { should allow_mass_assignment_of(:photo) }
 
   context 'validations' do
     it 'requires a name' do
