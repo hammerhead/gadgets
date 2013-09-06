@@ -9,7 +9,11 @@ class GadgetsController < ApplicationController
   end
 
   def create
-    Gadget.create(name: params[:gadget][:name], brand: params[:gadget][:brand], buy_date: params[:gadget][:buy_date])
+    Gadget.create(name: params[:gadget][:name],
+                  brand: params[:gadget][:brand],
+                  buy_date: params[:gadget][:buy_date],
+                  photo: params[:gadget][:photo]
+                  )
 
     @gadgets = Gadget.all
     render :index
