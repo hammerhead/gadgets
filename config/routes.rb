@@ -1,10 +1,11 @@
 Gadgets::Application.routes.draw do
+  get "welcome/index"
   devise_for :users
 
   root :to => 'gadgets#index'
 
-  resource :gadgets, only: [:index, :show, :create] do
-    root :to => 'gadgets#index'
+  resource :gadgets do
+    post :create, on: :collection
   end
 
   get '/gadgets/:gadget_id', to: 'gadgets#show', as: 'gadget'
