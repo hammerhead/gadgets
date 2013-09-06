@@ -38,5 +38,28 @@ describe GadgetsController do
 
       expect(response).to be_ok
     end
+
+    context 'search' do
+      before do
+        # TODO use a proper tool, such as database_cleaner
+        User.destroy_all
+        Gadget.destroy_all
+        @user = FactoryGirl.create(:user)
+      end
+
+      before(:each) do
+        sign_in @user
+      end
+
+      let(:search_term) { 'test_search' }
+
+      it 'returns only gadgets matching by title' do
+        Gadget.should_receive(:where).with('name LIKE ?', 'test_search')
+
+        get :index, search: search_term
+
+        expect(response).to be_ok
+      end
+    end
   end
 end
