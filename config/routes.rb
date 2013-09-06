@@ -1,4 +1,6 @@
 Gadgets::Application.routes.draw do
+  devise_for :users
+
   root :to => 'gadgets#index'
 
   resource :gadgets, only: [:index, :show] do
