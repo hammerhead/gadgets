@@ -1,5 +1,11 @@
 <h1>All My Gadgets</h1>
 
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
